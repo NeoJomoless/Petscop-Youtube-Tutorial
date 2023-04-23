@@ -1,0 +1,16 @@
+[gd_resource type="Theme" load_steps=4 format=2]
+
+[ext_resource path="res://PanelType_1.png" type="Texture" id=1]
+[ext_resource path="res://PetscopFont_Normal.tres" type="DynamicFont" id=2]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 300, 254.489 )
+margin_left = 30.0
+margin_right = 27.0823
+margin_top = 22.0
+margin_bottom = 24.761
+
+[resource]
+default_font = ExtResource( 2 )
+Panel/styles/panel = SubResource( 1 )
