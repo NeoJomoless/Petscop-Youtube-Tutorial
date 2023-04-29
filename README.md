@@ -1,4 +1,4 @@
 # Petscop-Youtube-Tutorial
 Files for the Petscop game tutorial for GODOT.
 Feel free to subscribe to my YouTube Channel.
-NOTE THAT FOR NOW I HAVE ONLY UPLOADED RECENT SCRIPT AND ART DATA, NOT TSCN OR MODEL FILES!
+Note that I have only uploaded updated art and script files, not model or tscn files, so be wary when importing to your Godot!
