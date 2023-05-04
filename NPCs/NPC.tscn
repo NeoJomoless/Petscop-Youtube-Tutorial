@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://petscop_player.png" type="Texture" id=1]
+[ext_resource path="res://NPCs/NPCAI.gd" type="Script" id=2]
+
+[sub_resource type="CapsuleShape" id=1]
+
+[node name="NPC" type="KinematicBody"]
+script = ExtResource( 2 )
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.225359, 0 )
+texture = ExtResource( 1 )
+hframes = 12
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 0.2, 0, 0, 0, -8.74228e-09, -0.2, 0, 0.2, -8.74228e-09, 0, 0.297922, 0 )
+shape = SubResource( 1 )
+
+[node name="Hitbox" type="Area" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2" type="CollisionShape" parent="Hitbox"]
+transform = Transform( 0.237644, 0, 0, 0, -1.02629e-08, -0.234789, 0, 0.255033, -1.11478e-08, 0, 0.297922, 0 )
+shape = SubResource( 1 )

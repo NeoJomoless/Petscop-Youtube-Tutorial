@@ -1,0 +1,258 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://PetscopFont_Normal.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Title_Screen.gd" type="Script" id=2]
+
+[sub_resource type="Environment" id=1]
+background_mode = 1
+background_color = Color( 1, 1, 1, 1 )
+fog_enabled = true
+fog_color = Color( 0.407843, 0.407843, 0.407843, 1 )
+fog_depth_begin = 2.0
+
+[sub_resource type="CubeMesh" id=2]
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.317647, 0.317647, 0.317647, 1 )
+
+[node name="Title_Screen" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.893324, 0.449413, 0, -0.449413, 0.893324, 0, 3.62108, 3.89327 )
+fov = 100.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 1 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.550758, 0.834665, 0, -0.834665, 0.550758, 0, 16.2872, 0 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -53.0
+margin_top = -20.0
+margin_right = 53.0
+margin_bottom = 20.0
+
+[node name="Button" type="Button" parent="CanvasLayer/VBoxContainer"]
+margin_right = 106.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 1 )
+text = "Press start!"
+
+[node name="exit" type="Button" parent="CanvasLayer/VBoxContainer"]
+margin_top = 26.0
+margin_right = 106.0
+margin_bottom = 48.0
+custom_fonts/font = ExtResource( 1 )
+text = "Exit"
+
+[node name="saves" type="VBoxContainer" parent="CanvasLayer"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -34.0
+margin_right = 20.0
+margin_bottom = 34.0
+
+[node name="Save1" type="Button" parent="CanvasLayer/saves"]
+margin_right = 115.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 1 )
+disabled = true
+text = "Choose a save"
+
+[node name="Save2" type="Button" parent="CanvasLayer/saves"]
+margin_top = 26.0
+margin_right = 115.0
+margin_bottom = 48.0
+custom_fonts/font = ExtResource( 1 )
+text = "Save 1"
+
+[node name="Save3" type="Button" parent="CanvasLayer/saves"]
+margin_top = 52.0
+margin_right = 115.0
+margin_bottom = 74.0
+custom_fonts/font = ExtResource( 1 )
+text = "Save 2"
+
+[node name="Save4" type="Button" parent="CanvasLayer/saves"]
+margin_top = 78.0
+margin_right = 115.0
+margin_bottom = 100.0
+custom_fonts/font = ExtResource( 1 )
+text = "Save 3"
+
+[node name="road" type="Spatial" parent="."]
+
+[node name="road" type="MeshInstance" parent="road"]
+transform = Transform( 90.0051, 0, 0, 0, 1, 0, 0, 0, 2.53785, 0, 0, 0 )
+mesh = SubResource( 2 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 3 )
+
+[node name="road2" type="MeshInstance" parent="road"]
+transform = Transform( 90.0051, 0, 0, 0, 0.29168, 0, 0, 0, 0.313281, 0, 2.21006, 2.08376 )
+mesh = SubResource( 2 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 3 )
+
+[node name="road4" type="MeshInstance" parent="road"]
+transform = Transform( 0.38031, 0, 0, 0, 0.795946, 0, 0, 0, 0.313281, 0, 1.26579, 2.08376 )
+mesh = SubResource( 2 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 3 )
+
+[node name="road5" type="MeshInstance" parent="road"]
+transform = Transform( 0.38031, 0, 0, 0, 0.795946, 0, 0, 0, 0.313281, 2.74282, 1.26579, 2.08376 )
+mesh = SubResource( 2 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 3 )
+
+[node name="road6" type="MeshInstance" parent="road"]
+transform = Transform( 0.38031, 0, 0, 0, 0.795946, 0, 0, 0, 0.313281, -2.64735, 1.26579, 2.08376 )
+mesh = SubResource( 2 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 3 )
+
+[node name="road7" type="MeshInstance" parent="road"]
+transform = Transform( 0.38031, 0, 0, 0, 0.795946, 0, 0, 0, 0.313281, -7.86014, 1.26579, 2.08376 )
+mesh = SubResource( 2 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 3 )
+
+[node name="road8" type="MeshInstance" parent="road"]
+transform = Transform( 0.38031, 0, 0, 0, 0.795946, 0, 0, 0, 0.313281, -5.11732, 1.26579, 2.08376 )
+mesh = SubResource( 2 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 3 )
+
+[node name="road9" type="MeshInstance" parent="road"]
+transform = Transform( 0.38031, 0, 0, 0, 0.795946, 0, 0, 0, 0.313281, -10.5075, 1.26579, 2.08376 )
+mesh = SubResource( 2 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 3 )
+
+[node name="road10" type="MeshInstance" parent="road"]
+transform = Transform( 0.38031, 0, 0, 0, 0.795946, 0, 0, 0, 0.313281, 8.12711, 1.26579, 2.08376 )
+mesh = SubResource( 2 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 3 )
+
+[node name="road11" type="MeshInstance" parent="road"]
+transform = Transform( 0.38031, 0, 0, 0, 0.795946, 0, 0, 0, 0.313281, 10.8699, 1.26579, 2.08376 )
+mesh = SubResource( 2 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 3 )
+
+[node name="road12" type="MeshInstance" parent="road"]
+transform = Transform( 0.38031, 0, 0, 0, 0.795946, 0, 0, 0, 0.313281, 5.47976, 1.26579, 2.08376 )
+mesh = SubResource( 2 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 3 )
+
+[node name="road13" type="MeshInstance" parent="road"]
+transform = Transform( 0.38031, 0, 0, 0, 0.795946, 0, 0, 0, 0.313281, 0, 1.26579, -2.42821 )
+mesh = SubResource( 2 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 3 )
+
+[node name="road14" type="MeshInstance" parent="road"]
+transform = Transform( 0.38031, 0, 0, 0, 0.795946, 0, 0, 0, 0.313281, 2.74282, 1.26579, -2.42821 )
+mesh = SubResource( 2 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 3 )
+
+[node name="road15" type="MeshInstance" parent="road"]
+transform = Transform( 0.38031, 0, 0, 0, 0.795946, 0, 0, 0, 0.313281, -2.64735, 1.26579, -2.42821 )
+mesh = SubResource( 2 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 3 )
+
+[node name="road16" type="MeshInstance" parent="road"]
+transform = Transform( 0.38031, 0, 0, 0, 0.795946, 0, 0, 0, 0.313281, -7.86014, 1.26579, -2.42821 )
+mesh = SubResource( 2 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 3 )
+
+[node name="road17" type="MeshInstance" parent="road"]
+transform = Transform( 0.38031, 0, 0, 0, 0.795946, 0, 0, 0, 0.313281, -5.11732, 1.26579, -2.42821 )
+mesh = SubResource( 2 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 3 )
+
+[node name="road18" type="MeshInstance" parent="road"]
+transform = Transform( 0.38031, 0, 0, 0, 0.795946, 0, 0, 0, 0.313281, -10.5075, 1.26579, -2.42821 )
+mesh = SubResource( 2 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 3 )
+
+[node name="road19" type="MeshInstance" parent="road"]
+transform = Transform( 0.38031, 0, 0, 0, 0.795946, 0, 0, 0, 0.313281, 8.12711, 1.26579, -2.42821 )
+mesh = SubResource( 2 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 3 )
+
+[node name="road20" type="MeshInstance" parent="road"]
+transform = Transform( 0.38031, 0, 0, 0, 0.795946, 0, 0, 0, 0.313281, 10.8699, 1.26579, -2.42821 )
+mesh = SubResource( 2 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 3 )
+
+[node name="road22" type="MeshInstance" parent="road"]
+transform = Transform( 0.38031, 0, 0, 0, 0.795946, 0, 0, 0, 0.313281, 13.5081, 1.26579, -2.42821 )
+mesh = SubResource( 2 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 3 )
+
+[node name="road23" type="MeshInstance" parent="road"]
+transform = Transform( 0.38031, 0, 0, 0, 0.795946, 0, 0, 0, 0.313281, 16.2225, 1.26579, -2.42821 )
+mesh = SubResource( 2 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 3 )
+
+[node name="road24" type="MeshInstance" parent="road"]
+transform = Transform( 0.38031, 0, 0, 0, 0.795946, 0, 0, 0, 0.313281, 19.7564, 1.26579, -2.42821 )
+mesh = SubResource( 2 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 3 )
+
+[node name="road25" type="MeshInstance" parent="road"]
+transform = Transform( 0.38031, 0, 0, 0, 0.795946, 0, 0, 0, 0.313281, -12.9019, 1.26579, -2.42821 )
+mesh = SubResource( 2 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 3 )
+
+[node name="road26" type="MeshInstance" parent="road"]
+transform = Transform( 0.38031, 0, 0, 0, 0.795946, 0, 0, 0, 0.313281, -15.9214, 1.26579, -2.42821 )
+mesh = SubResource( 2 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 3 )
+
+[node name="road21" type="MeshInstance" parent="road"]
+transform = Transform( 0.38031, 0, 0, 0, 0.795946, 0, 0, 0, 0.313281, 5.47976, 1.26579, -2.42821 )
+mesh = SubResource( 2 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 3 )
+
+[node name="road3" type="MeshInstance" parent="road"]
+transform = Transform( 90.0051, 0, 0, 0, 0.29168, 0, 0, 0, 0.313281, 0, 2.21006, -2.35721 )
+mesh = SubResource( 2 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 3 )
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="CanvasLayer/saves/Save1" to="." method="_on_Save1_pressed"]
+[connection signal="pressed" from="CanvasLayer/saves/Save2" to="." method="_on_Save2_pressed"]
+[connection signal="pressed" from="CanvasLayer/saves/Save3" to="." method="_on_Save3_pressed"]
+[connection signal="pressed" from="CanvasLayer/saves/Save4" to="." method="_on_Save4_pressed"]

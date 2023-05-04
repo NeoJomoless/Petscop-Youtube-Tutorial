@@ -1,0 +1,50 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Node",
+"class": "PathFinder",
+"language": "GDScript",
+"path": "res://PathFinder.gd"
+} ]
+_global_script_class_icons={
+"PathFinder": ""
+}
+
+[application]
+
+config/name="Petscop Youtube Tutorial"
+run/main_scene="res://Title_Screen.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+Autoload="*res://Autoloads/Autoload.gd"
+Game="*res://Autoloads/Game.gd"
+
+[gui]
+
+common/drop_mouse_on_gui_input_disabled=true
+theme/custom="res://Interface.tres"
+theme/custom_font="res://PetscopFont_Normal.tres"
+
+[layer_names]
+
+3d_physics/layer_1="tiles"
+3d_physics/layer_3="player"
+3d_physics/layer_4="npcs"
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
