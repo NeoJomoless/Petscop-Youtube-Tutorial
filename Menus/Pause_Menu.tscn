@@ -1,0 +1,195 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Menus/Pause_Menu.gd" type="Script" id=1]
+
+[sub_resource type="Animation" id=1]
+resource_name = "PauseInward"
+tracks/0/type = "value"
+tracks/0/path = NodePath("screenshot:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 512, 300 ), Vector2( 275, 170 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("screenshot:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("screenshot:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.5, 0.5 ) ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_pause_game"
+} ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "PauseOutward"
+tracks/0/type = "value"
+tracks/0/path = NodePath("screenshot:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 275, 170 ), Vector2( 512, 300 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("screenshot:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.5, 0.5 ), Vector2( 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("screenshot:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_unpause_game"
+} ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("screenshot:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 275, 170 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("screenshot:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.5, 0.5 ) ]
+}
+
+[node name="Pause_Menu" type="CanvasLayer"]
+pause_mode = 2
+layer = 5
+script = ExtResource( 1 )
+
+[node name="menu" type="Panel" parent="."]
+margin_right = 1028.0
+margin_bottom = 607.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="menu"]
+margin_left = 20.0
+margin_top = 340.0
+margin_right = 130.0
+margin_bottom = 466.0
+
+[node name="Resume" type="Button" parent="menu/VBoxContainer"]
+margin_right = 110.0
+margin_bottom = 22.0
+text = "Resume"
+
+[node name="Options" type="Button" parent="menu/VBoxContainer"]
+margin_top = 26.0
+margin_right = 110.0
+margin_bottom = 48.0
+text = "Options"
+
+[node name="Pets" type="Button" parent="menu/VBoxContainer"]
+margin_top = 52.0
+margin_right = 110.0
+margin_bottom = 74.0
+text = "Pets"
+
+[node name="Book" type="Button" parent="menu/VBoxContainer"]
+margin_top = 78.0
+margin_right = 110.0
+margin_bottom = 100.0
+text = "Book"
+
+[node name="Quit Game" type="Button" parent="menu/VBoxContainer"]
+margin_top = 104.0
+margin_right = 110.0
+margin_bottom = 126.0
+text = "Quit"
+
+[node name="screenshot" type="Sprite" parent="."]
+position = Vector2( 275, 170 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/PauseInward = SubResource( 1 )
+anims/PauseOutward = SubResource( 2 )
+anims/RESET = SubResource( 3 )
+
+[connection signal="pressed" from="menu/VBoxContainer/Resume" to="." method="_on_Resume_pressed"]
+[connection signal="pressed" from="menu/VBoxContainer/Options" to="." method="_on_Options_pressed"]
+[connection signal="pressed" from="menu/VBoxContainer/Pets" to="." method="_on_Pets_pressed"]
+[connection signal="pressed" from="menu/VBoxContainer/Book" to="." method="_on_Book_pressed"]
+[connection signal="pressed" from="menu/VBoxContainer/Quit Game" to="." method="_on_Quit_Game_pressed"]

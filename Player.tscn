@@ -1,7 +1,8 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://petscop_player.png" type="Texture" id=2]
+[ext_resource path="res://Menus/Pause_Menu.tscn" type="PackedScene" id=3]
 
 [sub_resource type="BoxShape" id=24]
 extents = Vector3( 0.224866, 0.305818, 0.243851 )
@@ -238,3 +239,5 @@ parameters/Run/blend_position = Vector2( 0, 0 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.885475, 0.464687, 0, -0.464687, 0.885475, 0, 1.39956, 1.99698 )
+
+[node name="Pause_Menu" parent="." instance=ExtResource( 3 )]
