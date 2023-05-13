@@ -38,7 +38,9 @@ func _on_Options_pressed():
 	print("Options")
 
 func _on_Pets_pressed():
-	print("Pets")
+	var CaughtPets = load("res://Menus/CaughtPets.tscn")
+	var CaughtInst = CaughtPets.instance()
+	add_child(CaughtInst)
 
 func _on_Book_pressed():
 	print("Book of Names")

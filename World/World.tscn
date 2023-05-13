@@ -3,7 +3,7 @@
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World/World.gd" type="Script" id=2]
 [ext_resource path="res://tiles_nav.tres" type="MeshLibrary" id=3]
-[ext_resource path="res://NPCs/NPC.tscn" type="PackedScene" id=4]
+[ext_resource path="res://NPCs/Pen.tscn" type="PackedScene" id=4]
 
 [sub_resource type="Environment" id=1]
 background_mode = 1
@@ -38,8 +38,8 @@ __meta__ = {
 [node name="Player" parent="GridMap" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.24664, 0 )
 
-[node name="NPC" parent="GridMap" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.46499, 1.10892, -1.20466 )
+[node name="Pen" parent="GridMap" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0462, 2.18025, 0 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 1 )

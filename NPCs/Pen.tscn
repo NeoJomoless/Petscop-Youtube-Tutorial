@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Menus/Resources/Pen.tres" type="Resource" id=1]
+[ext_resource path="res://NPCs/Pet.tscn" type="PackedScene" id=2]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.174896, 0.169865, 0.171516 )
+
+[sub_resource type="CapsuleShape" id=2]
+
+[sub_resource type="Animation" id=3]
+resource_name = "Oscillate"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite3D:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 2, 0 ), Vector3( 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite3D:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 2, 0 ) ]
+}
+
+[node name="Pen" instance=ExtResource( 2 )]
+petdet = ExtResource( 1 )
+pet_name = "Pen"
+petid = 1
+
+[node name="CollisionShape" parent="." index="0"]
+shape = SubResource( 1 )
+
+[node name="CollisionShape" parent="Area" index="0"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+shape = SubResource( 2 )
+
+[node name="AnimationPlayer" parent="." index="2"]
+autoplay = "Oscillate"
+anims/Oscillate = SubResource( 3 )
+anims/RESET = SubResource( 4 )
+
+[node name="Sprite3D" parent="." index="3"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 2, 0 )

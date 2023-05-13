@@ -53,6 +53,7 @@ func save_game():
 		"PlayerPositionX": Game.PlayerPosition_X,
 		"PlayerPositionY": Game.PlayerPosition_Y,
 		"PlayerPositionZ": Game.PlayerPosition_Z,
+		"CaughtPen": Game.CaughtPen
 	}
 	
 	save_game.store_line(to_json(data))
@@ -69,6 +70,7 @@ func load_game():
 			Game.PlayerPosition_X = current_line["PlayerPositionX"]
 			Game.PlayerPosition_Y = current_line["PlayerPositionY"]
 			Game.PlayerPosition_Z = current_line["PlayerPositionZ"]
+			Game.CaughtPen = current_line["CaughtPen"]
 
 	save_game.close()
 

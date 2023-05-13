@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Art/Pen.png" type="Texture" id=1]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Resource
+
+export var texture: Texture
+export var pet_name: String
+export var pet_desc: String
+export var caught: bool
+export var petid: int
+"
+
+[resource]
+script = SubResource( 1 )
+texture = ExtResource( 1 )
+pet_name = "Pen"
+pet_desc = "This is pen."
+caught = false
+petid = 1
