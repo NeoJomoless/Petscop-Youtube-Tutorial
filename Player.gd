@@ -12,6 +12,10 @@ var playerposz = Game.PlayerPosition_Z
 
 var player_position = Vector3(playerposx, playerposy, playerposz)
 
+var can_interact: bool = false
+
+signal dialog_interacted
+
 func _ready():
 	self.global_transform.origin = player_position
 
@@ -49,7 +53,20 @@ func Movement():
 		anim.play("idleforward")
 	else:
 		velocity.x = lerp(velocity.x, 0, 0.5)
+	if Input.is_action_pressed("Interact"):
+		if can_interact:
+			emit_signal("dialog_interacted")
 
 func _physics_process(delta):
 	Movement()
 	move_and_slide(velocity)
+
+
+func _on_InteractBox_body_entered(body):
+	if body.is_in_group("Dialog"):
+		can_interact = true
+
+
+func _on_InteractBox_body_exited(body):
+	if body.is_in_group("Dialog"):
+		can_interact = false

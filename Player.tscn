@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://petscop_player.png" type="Texture" id=2]
@@ -208,6 +208,9 @@ graph_offset = Vector2( -110.261, 0 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=19]
 
+[sub_resource type="BoxShape" id=25]
+extents = Vector3( 0.350111, 0.432202, 0.326851 )
+
 [node name="Player" type="KinematicBody"]
 script = ExtResource( 1 )
 
@@ -233,11 +236,20 @@ anims/rightwalk = SubResource( 9 )
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 18 )
 anim_player = NodePath("../AnimationPlayer")
+active = true
 parameters/playback = SubResource( 19 )
-parameters/Idle/blend_position = Vector2( -0.340729, 0.156069 )
+parameters/Idle/blend_position = Vector2( -0.00158477, 0 )
 parameters/Run/blend_position = Vector2( 0, 0 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.885475, 0.464687, 0, -0.464687, 0.885475, 0, 1.39956, 1.99698 )
 
 [node name="Pause_Menu" parent="." instance=ExtResource( 3 )]
+
+[node name="InteractBox" type="Area" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="InteractBox"]
+shape = SubResource( 25 )
+
+[connection signal="body_entered" from="InteractBox" to="." method="_on_InteractBox_body_entered"]
+[connection signal="body_exited" from="InteractBox" to="." method="_on_InteractBox_body_exited"]

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Petscop_Resume_Button.png-bad4ab6910a7881f7ce836f78a9c04a0.stex"
+path="res://.import/Petscop_Resume_Button_Pressed.png-b720a7935fa1f98760bd94a55264c5f7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Petscop_Resume_Button.png"
-dest_files=[ "res://.import/Petscop_Resume_Button.png-bad4ab6910a7881f7ce836f78a9c04a0.stex" ]
+source_file="res://Art/Petscop_Resume_Button_Pressed.png"
+dest_files=[ "res://.import/Petscop_Resume_Button_Pressed.png-b720a7935fa1f98760bd94a55264c5f7.stex" ]
 
 [params]
 
